@@ -1,13 +1,12 @@
 # Linux Mint Blog/ Manual
 Here's an ancient blog entry of what I did when I first setup my Linux Mint desktop machine with a Cinnamon UI that I would spend the rest of my internet career with.  
 
-
 ###### TOC:
 
 - Quick Install
 - Customizations
 - Bugs
-- HOTKEYS
+- Hotkeys
 - Browsers
 - System Stuff
 
@@ -20,7 +19,7 @@ Here's an ancient blog entry of what I did when I first setup my Linux Mint desk
 
 ### Quick Install
 
-Here's a no fluf procedure to bring the system up to my own personal specifications.  
+Here's a no fluff procedure to bring the system up to my own personal specifications.  
 
 ```
 setpci -s 00:02.0 F4.B=19  # set brightness to 19% to save batteries and eyes.  
@@ -78,7 +77,7 @@ Here's a list of hidden files and directories off of the home directory that are
 ```
 
 
-::>>Customizations<<::
+###Customizations
 
 ::Fix alt-tab timeout (Mint 14.1)
 
@@ -130,7 +129,7 @@ ref:  http://forums.linuxmint.com/viewtopic.php?f=208&p=658187
 ```
 
 
-::>>BUGS<<::
+###Bugs
 
 Well... there are a lot of computer manufacturers in the world.  Groups like dell, lenovo, acer-msi-asus, alienware, ibuypower, etc...  And what operating systems do you think these people test their hardware against?  Yep, windows.  So each time an disreputable company like, say, Gateway, comes out with a new laptop, they're releasing a solid piece of hardware if you're using windows XP on it for instance.  However, they're releasing a dumpy alpha release from the stand point of serious linux users.  
 
@@ -164,7 +163,7 @@ http://forums.linuxmint.com/viewtopic.php?f=47&t=130254&sid=93dd3308734c16f47cb9
 
 
 
-::>>HOTKEYS<<::
+###Hotkeys
 Go to Software Manager and install xbindkeys.  Then install xbindkeys-config.  launch xbindkeys-config from a terminal window and you should be good to go for configuring the following hotkeys.  
 
 You'll also need to install 'xautomation' to "send keystorkes" which is helpful for, say, turning your capslock button into an escape key if you aren't using your capslock key very much.  
@@ -265,7 +264,7 @@ You could also just use the built in feature, but I don't like it because it's u
 
 
 
-::>>Browsers<<::
+###Browsers
 
 -Ctrl+l
 Just a little tip for using web browsers, when you want to highlight the search bar, DON'T use the mouse.  Linux is keyboard oriented, so they make highlighting with the mouse more difficult I think.  Instead type ctrl+l and that will highlight the address bar.  This is more efficient because the next thing you will likely do is ctrl+c to copy, or just typing in a search query/url and so your hands will already be at the keyboard.  
@@ -303,7 +302,7 @@ Once the installation is complete, you can get to chrome by hitting the windows 
 
 
 
-::>>System Stuff<<::
+###System Stuff
 
 
 ::Dual Booting::
@@ -853,7 +852,7 @@ $  xcalib -invert -alter   # command to invert screen colors
 https://brutusfacticus.wordpress.com/2012/11/07/how-to-invert-screen-colors-in-ubuntu-based-gnulinux-distros/
 
 
-::>>Social<<::
+###Social
 
 
 ::Record Your Desktop for Screencasting::
@@ -900,7 +899,7 @@ kazam and istanbul and a couple of others do exist too.
 
 
 
-::>>Backups<<::
+###Backups
 http://ubuntuforums.org/showthread.php?t=35087
 
 Steps:
@@ -936,7 +935,7 @@ tar xvpfj backup.tar.bz2 -C /
 
 
 
-::>>Anonymity<<::
+###Anonymity
 
 ::MAC Changer
 One of the many things that can identify your computer is your MAC address.  Usually you'll be sitting behind a NAT firewall, so your specific MAC address won't be sent across the internet (instead the MAC address of the router is sent).  But it never hurts to hide your MAC address from the router itself in case the NSA download it's MAC address list.  
@@ -1063,7 +1062,7 @@ $  sudo ufw enable
 
 
 
-::>>Hacking<<::
+###Hacking
 
 Cinnamon's system settings dialog menu can be hacked here:
 /usr/lib/cinnamon-settings
