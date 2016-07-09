@@ -3,7 +3,7 @@ Here's an ancient blog entry of what I did when I first setup my Linux Mint desk
 
 ###### TOC:
 
-- Quick Install
+- [Quick Install](#quick-install)
 - Customizations
 - Bugs
 - Hotkeys
