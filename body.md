@@ -22,58 +22,58 @@ Here's an ancient blog entry of what I did when I first setup my Linux Mint desk
 Here's a no fluff procedure to bring the system up to my own personal specifications.  
 
 ```
-setpci -s 00:02.0 F4.B=19  # set brightness to 19% to save batteries and eyes.  
-
-sudo apt-get install xbindkeys xbindkeys-config xautomation nbtscan grdesktop xcalib ekiga vim xclip dconf-tools tree youtube-dl sshfs openssh-server;
-sudo apt-get install docky keepassx virtualbox treeline;
-sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf mysql-server mysql-client libmysqlclient15-dev nodejs
-
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
-# do rvm implode to fully uninstall .rvm/ then run the bash script above again to do a 'fresh install'
+    setpci -s 00:02.0 F4.B=19  # set brightness to 19% to save batteries and eyes.  
+    
+    sudo apt-get install xbindkeys xbindkeys-config xautomation nbtscan grdesktop xcalib ekiga vim xclip dconf-tools tree youtube-dl sshfs openssh-server;
+    sudo apt-get install docky keepassx virtualbox treeline;
+    sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf mysql-server mysql-client libmysqlclient15-dev nodejs
+    
+    \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    # do rvm implode to fully uninstall .rvm/ then run the bash script above again to do a 'fresh install'
 ```
 
 You might want to fix up your database
 ```
-$  mysql -u root -p
-CREATE USER 'user'@'localhost' IDENTIFIED BY 'pass';
-GRANT ALL ON database.* TO user@localhost IDENTIFIED BY 'pass';
-GRANT ALL ON database.* TO user@localhost IDENTIFIED BY 'pass';
-GRANT ALL ON database.* TO user@localhost IDENTIFIED BY 'pass';
+    $  mysql -u root -p
+    CREATE USER 'user'@'localhost' IDENTIFIED BY 'pass';
+    GRANT ALL ON database.* TO user@localhost IDENTIFIED BY 'pass';
+    GRANT ALL ON database.* TO user@localhost IDENTIFIED BY 'pass';
+    GRANT ALL ON database.* TO user@localhost IDENTIFIED BY 'pass';
 ```
 
 
 Here's a list of hidden files and directories off of the home directory that are worth transfering to fresh installs.  
 ```
-#.cache/docky/docky.desktop.en_US.UTF-8.cache
-#~/.local/share/docky/plugins
-.gconf/apps/gnome-terminal
-.config/chromium
-.config/google-chrome
-.gconf/apps/docky-2
-
-.eclipse      # a 'just ok' IDE
-.gnupg        # GnuPG keys used by enigmail in thunderbird
-.mozilla      # fire fox
-.ssh          # RSA keys for authenticating with other linux machines over SSH
-.shortcuts    # Where I personally store all my shortcuts to drop into docky
-.thunderbird  # Email client
-.vim          # The most fun text editor
-.xchat2       # Xchat IRC client
-.VirtualBox   # A program that lets you run Windows XP while linuxing
-
-.bash_login
-.bashrc
-.my_aliases
-.profile
-.gitconfig
-.xbindkeysrc
-
-# Other good things to backup
-/etc/fstab
-/etc/samba/smb.conf
-
-.gas
-.config/hub
+    #.cache/docky/docky.desktop.en_US.UTF-8.cache
+    #~/.local/share/docky/plugins
+    .gconf/apps/gnome-terminal
+    .config/chromium
+    .config/google-chrome
+    .gconf/apps/docky-2
+    
+    .eclipse      # a 'just ok' IDE
+    .gnupg        # GnuPG keys used by enigmail in thunderbird
+    .mozilla      # fire fox
+    .ssh          # RSA keys for authenticating with other linux machines over SSH
+    .shortcuts    # Where I personally store all my shortcuts to drop into docky
+    .thunderbird  # Email client
+    .vim          # The most fun text editor
+    .xchat2       # Xchat IRC client
+    .VirtualBox   # A program that lets you run Windows XP while linuxing
+    
+    .bash_login
+    .bashrc
+    .my_aliases
+    .profile
+    .gitconfig
+    .xbindkeysrc
+    
+    # Other good things to backup
+    /etc/fstab
+    /etc/samba/smb.conf
+    
+    .gas
+    .config/hub
 ```
 
 
@@ -780,19 +780,19 @@ $  apt-get install git-core
 To install ruby, we'll use rvm because that's the standard rubiest way.  
 
 ```
-$  apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
-$  bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+    $  apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+    $  bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 ```
 
 After that, you should be able to close your terminal, and then reopen it, with access to rvm
 ```
-$  rvm -v
-rvm 1.15.8 (stable) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+    $  rvm -v
+    rvm 1.15.8 (stable) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
 ```
 
 Now you need to install some versions of ruby.  Atm, ruby 1.9.3 exists, so I'll just go ahead and install that.  
 ```
-$  rvm install 1.9.3      # this will take a while...
+    $  rvm install 1.9.3      # this will take a while...
 ```
 
 Before rvm will work in gnome-terminal, you'll need to apply this fix... 
@@ -801,34 +801,34 @@ https://rvm.io/integration/gnome-terminal/
 
 After you've done that, you should be able to use ruby...
 ```
-#  make this version of ruby active by default
-$  rvm --default 1.9.3
-
-#  Manually change to version 1.9.3
-$  rvm use 1.9.3
-
-#  verify which version of ruby you're using
-$  ruby -v
-ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
+    #  make this version of ruby active by default
+    $  rvm --default 1.9.3
+    
+    #  Manually change to version 1.9.3
+    $  rvm use 1.9.3
+    
+    #  verify which version of ruby you're using
+    $  ruby -v
+    ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
 ```
 
 You may also need to put the below line into your bashrc and possible source it in your .bash_login file.  I did this when I seemed to have encountered a bug.  
 (~/.bashrc)
 ```
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 ```
 
 Fun!  Want to do a hello world?
 
 (~/dev/ruby/hello/main.rb)
 ```
-puts "Hello world of Ruby!"
+    puts "Hello world of Ruby!"
 ```
 
 Then ruby it, you should see:
 ```
-$  ruby ~/dev/ruby/hello/main.rb
-Hello world of Ruby!
+    $  ruby ~/dev/ruby/hello/main.rb
+    Hello world of Ruby!
 ```
 
 
@@ -845,8 +845,8 @@ Bla
 Have you ever come to a completely white page on the web and it totally hurts your eyes due to its brightness?  Or maybe you downloaded an application that has a similarly bothersome interface.  Well you can solve these problems easily.
 
 ```
-$  apt-get install xcalib
-$  xcalib -invert -alter   # command to invert screen colors
+    $  apt-get install xcalib
+    $  xcalib -invert -alter   # command to invert screen colors
 ```
 
 https://brutusfacticus.wordpress.com/2012/11/07/how-to-invert-screen-colors-in-ubuntu-based-gnulinux-distros/
@@ -858,7 +858,7 @@ https://brutusfacticus.wordpress.com/2012/11/07/how-to-invert-screen-colors-in-u
 ::Record Your Desktop for Screencasting::
 
 ```
-$  apt install gtk-recordmydesktop
+    $  apt install gtk-recordmydesktop
 ```
 
 
@@ -875,10 +875,10 @@ Now...
 Ekiga is open source and user friendly...  Unlike jitsi witch is way to ugly to constitute friendly.  
 
 ```
-apt-get install ekiga
-
-#  This should install zfone for call encryption
-sudo apt-get install libzrtpcpp2
+    apt-get install ekiga
+    
+    #  This should install zfone for call encryption
+    sudo apt-get install libzrtpcpp2
 ```
 
 
@@ -914,22 +914,22 @@ To backup your system, you'll want to put everything in your root folder into a 
 1)  Clear out caches
 
 ```
-# Clear out apt-get cache of outdated packages
-$  sudo apt-get autoclean
-
-#  The .cache file http://askubuntu.com/questions/102046/is-it-okay-to-delete-cache
-$  ~/.cache
+    # Clear out apt-get cache of outdated packages
+    $  sudo apt-get autoclean
+    
+    #  The .cache file http://askubuntu.com/questions/102046/is-it-okay-to-delete-cache
+    $  ~/.cache
 ```
 
 
 Backup:
 ```
-tar cvpjf backup.tar.bz2 --exclude=/storage --exclude=/proc --exclude=/tmp --exclude=/dev --exclude=/lost+found --exclude=/backup.tar.bz2 --exclude=/mnt --exclude=/sys --exclude=/home/kentos/archive --exclude=/home/kentos/Videos/code /
+    tar cvpjf backup.tar.bz2 --exclude=/storage --exclude=/proc --exclude=/tmp --exclude=/dev --exclude=/lost+found --exclude=/backup.tar.bz2 --exclude=/mnt --exclude=/sys --exclude=/home/kentos/archive --exclude=/home/kentos/Videos/code /
 ```
 
 Restore:
 ```
-tar xvpfj backup.tar.bz2 -C /
+    tar xvpfj backup.tar.bz2 -C /
 ```
 
 
@@ -942,20 +942,20 @@ One of the many things that can identify your computer is your MAC address.  Usu
 
 First we need to install the app for changing your MAC address.  
 ```
-$  apt install macchanger
+    $  apt install macchanger
 ```
 
 The we need to add a line to the pre-up script for changing your MAC right before it switches on at bootup.  I believe this technique will prevent your original MAC address from being exposed to the air.  
 
 (/etc/network/if-pre-up.d/wireless-tools)
 ```
-.
-.
-.
-sudo macchanger -m 00:00:00:00:00:01 wlan0  # Replace wlan0 with the name 
-                                            # of the NIC in `ifconfig` you'd like changed.
-                                            # for hard wired ports... You might need put the code
-                                            # You can use -r to make it a random value each bootup
+    .
+    .
+    .
+    sudo macchanger -m 00:00:00:00:00:01 wlan0  # Replace wlan0 with the name 
+                                                # of the NIC in `ifconfig` you'd like changed.
+                                                # for hard wired ports... You might need put the code
+                                                # You can use -r to make it a random value each bootup
 ```
 
 When your distro upgrades, it may mention that you modified this file.  Overwrite the file with whatever it wants and then mod your MAC address again in the new file.  
@@ -981,7 +981,7 @@ To be somewhat anonymous you can sign up for some VPNs.  They're pretty cheap, t
 First install openvpn on your system
 
 ```
-sudo apt-get install openvpn
+    sudo apt-get install openvpn
 ```
 
 The confuguration files for openvpn are placed in `/etc/openvpn`.  If your VPN provider is awesome they will probably supply downloads for configuration files that you can just drop into your openvpn configuration folder.  Once your configuration files are installed, you should be able to control openvpn via `sudo /etc/init.d/openvpn (start, stop, status, etc...)`.  
@@ -1052,8 +1052,8 @@ Write that file and then mark it exicutable `sudo chmod 0755 ~/scripts/firewall_
 
 Note to control your firewall, use these commands:
 ```
-$  sudo ufw disable
-$  sudo ufw enable
+    $  sudo ufw disable
+    $  sudo ufw enable
 ```
 
 
@@ -1077,8 +1077,10 @@ Cinnamon's system settings dialog menu can be hacked here:
 
 ::>> Fix File Permissions <<::
 
-find . -type d -print0 | xargs -0 chmod 0775 # For directories
-find . -type f -print0 | xargs -0 chmod 0664 # For files
+```
+    find . -type d -print0 | xargs -0 chmod 0775 # For directories
+    find . -type f -print0 | xargs -0 chmod 0664 # For files
+```
 
 
 
